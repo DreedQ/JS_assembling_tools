@@ -1,7 +1,7 @@
 import "../node_modules/howler/src/howler.core.js";
 
 let sound = new Howl({
-    src: [ /*'alarm1.mp3',*/ 'alarm-clock.wav']
+    src: ['alarm-clock.wav']
 });
 
 
