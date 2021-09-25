@@ -1,10 +1,12 @@
-import "../node_modules/howler/src/howler.core.js";
+import "../../node_modules/howler/src/howler.core.js";
+import alarm from '../audio/alarm.mp3'
+// let alarm = require("../audio/alarm.mp3");
 
 let sound = new Howl({
-    src: ['alarm-clock.wav']
+    src: [alarm]
 });
 
-
+// sound.play()
 
 // Получает элементы из index.html
 const startTimer = document.getElementById('startBtn');
@@ -28,6 +30,7 @@ stopTimer.addEventListener('click', (event) => {
     event.preventDefault();
     clearTimeout(ticker); //обнуляет интервал времени таймера
     info.innerHTML = 'Отсчёт остановлен.'
+    sound.stop()
         // console.log('STOP TIMER.');
 });
 
@@ -64,7 +67,7 @@ export function timer() {
                 SetMinutes.value = 59;
                 timer();
             } else {
-                info.innerHTML = 'Отсчёт окончен.'
+                info.innerHTML = 'Отсчёт окончен.';
                 sound.play();
                 console.log("DING - DONG!!!")
             }

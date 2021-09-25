@@ -1,7 +1,7 @@
 import { diffDates, diffToHtml } from "./datecalc.js";
 import { formatError } from "./utils.js";
 import "./switcher.js";
-import { timer } from "./timer.js";
+import "./timer.js";
 
 
 const dateCalcForm = document.getElementById("datecalc");
